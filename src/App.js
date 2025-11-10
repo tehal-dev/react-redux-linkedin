@@ -13,19 +13,21 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("this is added");
     auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
-        dispatch(
-          login({
-            email: userAuth.email,
-            uid: userAuth.uid,
-            displayName: userAuth.displayName,
-            photoURL: userAuth.photoURL,
-          })
-        );
-      } else {
-        dispatch(logout());
+        dispatch(logout())
+        return
       }
+      dispatch(
+        login({
+          email: userAuth.email,
+          uid: userAuth.uid,
+          displayName: userAuth.displayName,
+          photoURL: userAuth.photoURL,
+        })
+      )
+      return
     });
   }, []);
   return (
