@@ -1,15 +1,7 @@
-// import firebase from "firebase";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getAnalytics } from "firebase/analytics";
 import {
-  doc,
-  onSnapshot,
-  query,
-  where,
-  getFirestore,
-  collection,
-  getDocs,
+  getFirestore
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -24,9 +16,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-// console.log("analytics", analytics);
 const db = getFirestore();
 const auth = getAuth(app);
 
