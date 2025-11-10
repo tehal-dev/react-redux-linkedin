@@ -12,6 +12,9 @@ function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
+
+  
+
   useEffect(() => {
     console.log("this is added");
     auth.onAuthStateChanged((userAuth) => {

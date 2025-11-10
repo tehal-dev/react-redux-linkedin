@@ -65,7 +65,7 @@ function Feed() {
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
-      console.error("Error adding document: ", e);
+      console.error("Error adding document: ", {e});
     }
     setInput("");
   };
